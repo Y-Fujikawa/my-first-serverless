@@ -18,4 +18,9 @@ module.exports.hello = (event, context, cb) => {
   });
 };
 
-// You can add more handlers here, and reference them in serverless.yml
+module.exports.insert = (event, context, cb) => {
+  console.log("☆☆");
+  console.log(event);
+  console.log("☆☆");
+  cb(null, { message: 'Success' });
+};

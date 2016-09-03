@@ -34,16 +34,19 @@ functions:
   hello:
     handler: handler.hello
     memorySize: 128
-
-#   you can add any of the following events
     events:
       - http:
           path: handler/hello
           method: get
           private: true
-#     - s3: ${bucket}
-#     - schedule: rate(10 minutes)
-#     - sns: greeter-topic
+  insert:
+    handler: handler.insert
+    memorySize: 128
+    events:
+      - http:
+          path: handler/insert
+          method: post
+          private: true
 
 # you can add CloudFormation resource templates here
 #resources:
